@@ -1,0 +1,525 @@
+body {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;
+  }
+
+/*navbar*/
+
+nav {
+    margin: 0%;
+}
+
+#category_dropdown {
+    background-color: #262626;
+}
+
+.category_item {
+    text-align: left;
+    margin-left: 15%;
+    margin-bottom: 1%;
+}
+
+.category_item a {
+    color: white;
+    opacity: 50%;
+}
+
+.category_item a:hover {
+    opacity: 80%;
+}
+
+/*article*/
+
+.article_container {
+    width: 100%;
+    height: auto;
+    margin: 0%;
+}
+
+    /*article image*/
+
+.article_image_container {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.article_image_box {
+    height: 350px;
+    margin: 5% 5% 5% 5%;
+}
+
+.article_image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5%;
+    box-shadow: 10px 10px 5px #ccc;
+      -moz-box-shadow: 10px 10px 5px #ccc;
+      -webkit-box-shadow: 10px 10px 5px #ccc;
+      -khtml-box-shadow: 10px 10px 5px #ccc;
+}
+
+.article_image:hover {
+    transform: scale(1.1);
+}
+
+    /* article general info */
+
+.article_info_container {
+    width: 50%;
+    float: right;
+    height: auto;
+}
+
+.article_info_box {
+    width: 100%;
+    height: 100%;
+    margin-top: 6%;
+}
+
+#category_badge_anchor {
+    text-decoration: none;
+    color: white;
+}
+
+#bid_on_article_input {
+    width: 70%;
+}
+
+#bid_input_field {
+    margin-right: 3%;
+}
+
+    /*article description*/
+
+.article_description_container {
+    width: 70%;
+    clear: both;
+    margin-left: 15%;
+    margin-top: 1%;
+}
+
+    /*article buttons*/
+
+.article_buttons {
+    width: 100%;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.article_btn {
+    display: inline-block;
+}
+
+#close_auction_btn {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+    /*article comments*/
+
+.article_comments {
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#comments_header {
+    margin-bottom: 2%;
+}
+
+.reply_form {
+    display: none;
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+
+#reply_comment {
+    width: 50%;
+}
+
+.article_replies_to_comments {
+    margin-left: 10%;
+}
+
+#article_comment_text {
+    margin-left: 2%;
+}
+
+.reply_trigger {
+    cursor:pointer;
+    color: #0d6efd;
+    text-decoration:underline;
+}
+
+.reply_trigger:hover {
+    text-decoration:none;
+    text-shadow: 1px 1px 1px #555;
+}
+
+.article_create_comment {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#comment_textarea {
+    width: 70%;
+}
+
+#article_create_comment_btn {
+    margin-top: 2%;
+}
+
+    /*winner alert*/
+
+#article_won_alert {
+    text-align: center;
+}
+
+/*new auction*/
+
+.new_auction_container {
+    width: 100%;
+    height: auto;
+    margin-top: 3%;
+}
+
+#new_auction_header {
+    text-align: center;
+}
+
+#new_auction_subtitle {
+    text-align: center;
+}
+
+.new_auction_form {
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.new_auction_form_field {
+    margin-bottom: 1%;
+}
+
+#new_listing_title {
+    width: 50%;
+}
+
+#new_listing_description {
+    width: 90%;
+}
+
+#new_listing_image {
+    width: 50%;
+}
+
+#new_listing_starting_bid_container {
+    width: 25%;
+}
+
+#new_listing_category {
+    width: 25%;
+}
+
+.new_auction_btn_container {
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+/*categories*/
+
+.categories_container {
+    width: 100%;
+    height: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+#categories_subtitle {
+    margin-bottom: 3%;
+}
+
+.categories_list {
+    width: 30%;
+    text-align: center;
+    margin-left: 35%;
+    margin-bottom: 5%;
+}
+
+.categories_list li {
+    text-align: left;
+}
+
+/*category*/
+
+.category_container {
+    margin-top: 3%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5%;
+}
+
+#category_header {
+    text-align: center;
+}
+
+#category_subtitle {
+    text-align: center;
+}
+
+.category_item_grid {
+    width: 90%;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 5%;
+}
+
+.category_item_image_container {
+    width: 50%;
+    height: 200px;
+    float: left;
+    text-align: center;
+}
+
+.category_item_image {
+    height: 100%;
+    width: 100%;
+    border-radius: 5%;
+}
+
+.category_item_info {
+    width: 45%;
+    margin-left: 5%;
+    float: right;
+    text-align: left;
+}
+
+#category_item_btn_anchor {
+    color: white;
+    text-decoration: none;
+}
+
+#empty_category_message {
+    margin-top: 5%;
+    text-align: center;
+}
+
+#empty_category_btn_anchor {
+    color: white;
+    text-decoration: none;
+}
+
+
+/*profile*/
+
+.profile_container {
+    width: 100%;
+    height: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+.profile_box {
+    width: 50%;
+    margin-left: 20%;
+    margin-right: 30%;
+    text-align: left;
+}
+
+#profile_header_separation {
+    margin-left: -40%;
+}
+
+.hidden_form_toggle {
+    cursor:pointer;
+    color: #0d6efd;
+    text-decoration:underline;
+}
+
+.hidden_form_toogle:hover {
+    text-decoration:none;
+    text-shadow: 1px 1px 1px #555;
+}
+
+.hidden_form {
+    display: none;
+    margin-left: 30%;
+    margin-bottom: 2%;
+}
+
+.profile_change_input_field {
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+#change_username_btn {
+    margin-top: 3%;
+    margin-left: 35%;
+}
+
+#change_password_btn {
+    margin-top: 3%;
+    margin-left: 35%;
+}
+
+/*register menu*/
+
+.register_container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 3%;
+}
+
+#register_subtitle {
+    margin-bottom: 3%;
+}
+
+#register_inpuy_field {
+    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#register_link_to_signin {
+    margin-top: 3%;
+}
+
+/*login*/
+
+.login_container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#login_header {
+    margin-bottom: 2%;
+}
+
+#login_input_field {
+    margin-bottom: 2%;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#login_link_to_register {
+    margin-top: 3%;
+}
+
+/*not found page*/
+
+.not_found_container {
+    width: 100%;
+    height: auto;
+    margin-top: 10%;
+    text-align: center;
+}
+
+#not_found_back_home_anchor {
+    text-decoration: none;
+    color: white;
+}
+
+/*index (re-use some classes from category */
+
+.index_container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.grid_box {
+    width: auto;
+    margin-bottom: 5%;
+}
+
+.index_active_listings_box {
+    margin-bottom: 5%;
+    width: 100%;
+    height: auto;
+}
+
+#index_active_listings_header {
+    margin-bottom: 2%;
+}
+
+
+.index_closed_listings_box {
+    width: 100%;
+    height: auto;
+    margin-top: 7%;
+}
+
+#closed_listings_hr {
+  margin-bottom: 2%;
+}
+
+/*results*/
+
+.results_container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 3%;
+}
+
+/*watchlist*/
+
+.watchlist_container {
+    width: 100%;
+    height: auto;
+    margin-top: 3%;
+    text-align: center;
+}
+
+#watchlist_header {
+    margin-bottom: 3%;
+}
+
+
+/*footer*/ 
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background-color: #292b2c;
+    text-align: center; 
+    color: white;
+    
+  }
+
+  footer span {
+    opacity: 50%;
+  }
+
+  footer span a {
+      text-decoration: none;
+      color: white;
+  }
+
+
+

@@ -1,0 +1,104 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<div class="profile_container">
+    <h2>{{profile.username}} - PROFILE</h2>
+    <hr id="profile_header_separation">
+    <div class="profile_box">
+        {% if profile.username == user.username %}
+        <div>
+            <p><strong>USERNAME:</strong> {{profile.username}} &nbsp;&nbsp;&nbsp;<span class="hidden_form_toggle">-Change>> </span></p>
+            <div class="hidden_form"> 
+                <form method="post" action="{% url 'profile_update'%}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="new_username">Enter new username:</label><br>
+                        <input type="text" name="new_username" id="new_username" class="profile_change_input_field" required="required">
+                    </div>
+                    <div>
+                        <label for="repeat_new_username">Repeat new username:</label><br>
+                        <input type="text" name="repeat_new_username" id="repeat_new_username" class="profile_change_input_field" required="required">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="change_username_btn">Change username</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <p><strong>PASSWORD:</strong> ********* &nbsp;&nbsp;&nbsp;<span class="hidden_form_toggle">-Change>></span></p>
+            <div class="hidden_form"> 
+                <form method="post" action="{% url 'profile_update'%}">
+                    {% csrf_token %}
+                    <div>
+                        <label for="new_password">Enter new password:</label><br>
+                        <input type="password" name="new_password" id="new_password" class="profile_change_input_field" required="required">
+                    </div>
+                    <div>
+                        <label for="repeat_new_password">Repeat new password:</label><br>
+                        <input type="password" name="repeat_new_password" id="repeat_new_password" class="profile_change_input_field" required="required">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="change_password_btn">Change password</button>
+                </form>
+            </div>
+        </div>
+        <div>
+            <p><strong>Current Money:</strong> ${{profile.money}}.00 </p>
+        </div>
+        {% endif %}
+        <div>
+            <p><strong>EMAIL:</strong> {{profile.email}}</p>
+        </div>
+        <div>
+            <p><strong>Last time online:</strong> {{profile.last_login}}</p>
+            <p><strong>Joined:</strong> {{profile.date_joined}}</p>
+        </div>
+        <div>
+            <p><strong>Auctions won:</strong> {{profile.won_auctions}}</p>
+            <p><strong>Active auctions:</strong> {{profile.active_auctions}}</p>
+        </div>
+    </div>
+</div>
+
+{% if profile.alert == "username_changed"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("username changed succesfully.");}
+    </script>
+{% endif %}
+{% if profile.alert == "username_dont_match"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. Usernames doesn't match. Try again.");}
+    </script>
+{% endif %}
+{% if profile.alert == "username_too_short"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. Username is too short.");}
+    </script>
+{% endif %}
+{% if profile.alert == "characters_not_allowed"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. Username must only contain letters, numbers or symbols '.', '+', '-', '_', '@'.");}
+    </script>
+{% endif %}
+{% if profile.alert == "username_taken"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. This username is already taken. Try another.");}
+    </script>
+{% endif %}
+{% if profile.alert == "current_username"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. New username must be different from current one.");}
+    </script>
+{% endif %}
+<script type="text/javascript">
+    $(".hidden_form").hide();
+    $(".hidden_form_toggle").click(function()
+    {$(this).parent().next('.hidden_form').toggle();});
+</script>
+
+{% endblock %}

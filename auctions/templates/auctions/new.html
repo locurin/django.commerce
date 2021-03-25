@@ -1,0 +1,43 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Auction | New {% endblock %}
+{% block body %}
+    <div class="new_auction_container">
+        <h1 id="new_auction_header">Create new auction</h1>
+        <h4 id="new_auction_subtitle">Hello, {{user.username}}. Start selling in just a minute!</h4>
+        <form method="post" action="{% url 'new' %}" class="new_auction_form">
+            {% csrf_token %}
+            <div class="new_auction_form_field">
+                <label for="new_listing_title"><strong>Title:</strong></label><br>
+                <input type="text" name="title" id="new_listing_title" required="required" pattern="[A-Za-z0-9]{1,20}{ }" minlength="4" placeholder=" Must be at least 4 characters long">
+            </div>
+            <div class="new_auction_form_field">
+                <label for="new_listing_image"><strong>Image link:</strong></label><br>
+                <input type="text" name="url_image" id="new_listing_image" placeholder=" Insert a link to image of the article">
+            </div>
+            <div class="new_auction_form_field" id="new_listing_starting_bid_container">
+                <label for="new_listing_starting_bid"><strong>Starting price:</strong></label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">$</span>
+                    <input type="number" class="form-control" min="1" name="new_listing_starting_bid" id="new_listing_starting_bid" required="required" class="form-control" aria-label="Amount (to the nearest dollar)">
+                </div>
+            </div>
+            <div class="new_auction_form_field">
+                <label for="new_listing_category"><strong>Category:</strong></label><br>
+                <select name="category"  class="form-select form-select-sm" id="new_listing_category" required="required">
+                <option value="" disabled selected>Categories</option>
+                {% for categ in categs %}
+                <option value="{{categ}}">{{categ}}</option>
+                {% endfor %}
+                </select> 
+            </div>
+            <div class="new_auction_form_field">
+                <label for="new_listing_description"><strong>Description:</strong></label><br>
+                <textarea rows="4" name="description" id="new_listing_description" placeholder=" You can user Markdown language to style your description."></textarea>
+            </div>
+            <div class="new_auction_btn_container">
+                <button type="submit" class="btn btn-primary" id="new_listing_btn"><strong>Create</strong></button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

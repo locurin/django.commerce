@@ -1,0 +1,39 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Auction | {{category}} {% endblock %}
+{% block body %}
+<div class="category_container">
+    <h1 id="category_header">{{category}}</h1>
+    {% if not Empty%}
+    <h4 id="category_subtitle">Available auctions for this category:</h4>
+    {% endif %}
+    <div class="category_item_grid">
+        {% for listing in listings %}
+            {% if listing.status == "Active" %}
+                <div class="category_item_container">
+                    <div class="category_item_image_container">
+                        <img class="category_item_image" src="{{listing.image_url}}" title="{{listing.title}}" alt="{{listing.title}}">
+                    </div>
+                    <div class="category_item_info">
+                        <h4><strong>{{listing.title}}</strong></h4>
+                        {% if listing.TotalBiders == 0 %}
+                            <p><strong>Starting bid:</strong> ${{listing.starting_bid}}.00</p>
+                        {% else %}
+                            <p><strong>Current bid:</strong> ${{listing.current_bid}}.00</p>
+                        {% endif %}
+                        <p><strong>Bids:</strong> {{listing.TotalBiders}}</p>
+                        <p><strong>Seller:</strong> <a href="{% url 'profile_all' listing.author  %}">{{listing.author}}</a></p>
+                        <button class="btn btn-primary" id="category_item_btn"><a href="../../auctions/{{listing.title}}" id="category_item_btn_anchor"><strong>See more >></strong></a></button>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if Empty %}
+        <div id="empty_category_message">
+            <h4>There is no articles in this category!</h4>
+            <button class="btn btn-primary"><a href="../../categories" id="empty_category_btn_anchor"><strong>Go back</strong></a></button>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

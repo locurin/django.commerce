@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Auction | Categories {% endblock %}
+{% block body %}
+<div class="categories_container">
+    <h1 id="categories_header">Categories</h1>
+    <h4 id="categories_subtitle">Choose a category to see available auctions:</h4>
+    <div class="categories_list">   
+        <ul class="list-group">
+            {% for category in categories %}
+                <li class="list-group-item"><a href="../categories/{{category}}"> >> {{category}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+ </div>
+  {% endblock %}

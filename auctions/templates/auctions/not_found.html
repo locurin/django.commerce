@@ -1,0 +1,10 @@
+{% extends "auctions/layout.html" %}
+
+{% block title %} Auction | 404 - Not Found {% endblock %}
+{% block body %}
+    <div class="not_found_container">
+        <h1><strong>404 Error - Page not found</strong></h1>
+        <p>Sorry, no article with such name was found, please try again<p>
+        <button class="btn btn-primary" id="not_found_btn"><a href="{% url 'index' %}" id="not_found_back_home_anchor"><strong>Back to Home</strong></a></button>
+    </div>
+{% endblock %}
