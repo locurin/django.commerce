@@ -40,4 +40,10 @@
             </div>
         </form>
     </div>
+    {% if user.alert == "title_taken"  %}
+    <script type="text/javascript">
+        window.onload = function(){ 
+        alert("Error. That title was already taken. Please choose another.");}
+    </script>
+{% endif %}
 {% endblock %}

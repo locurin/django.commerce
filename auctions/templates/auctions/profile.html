@@ -1,7 +1,7 @@
 {% extends "auctions/layout.html" %}
-
+{% block title %} Auction | Results for {{query}} {% endblock %}
+{% block title %} Auction | {{profile.username}} {% endblock %}
 {% block body %}
-
 <div class="profile_container">
     <h2>{{profile.username}} - PROFILE</h2>
     <hr id="profile_header_separation">

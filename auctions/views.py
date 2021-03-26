@@ -82,19 +82,28 @@ creates a new auction's article and render its page if success
 @login_required
 def new(request):
     if request.method == "GET":
+        # clear user alerts and render
+        user = util.get_user(request)
+        User.objects.filter(pk=user.id).update(alert="")
         return render(request, "auctions/new.html")
     else:
+        # check if name is not taken
+        list_of_titles = Listing.objects.values_list('title', flat=True)
+        user = util.get_user(request)
+        title = request.POST["title"]
+        if title in list_of_titles:
+            alert = "title_taken"
+            User.objects.filter(pk=user.id).update(alert=alert)
+            return redirect("new")
         # add stock description if non is submited
         if not request.POST["description"]:
             description = "Seller didn't add a description to this article."
         else:
             description = util.markdown_translate(request.POST["description"]) 
         # create variables for every other field
-        title = request.POST["title"]
         image_url = request.POST["url_image"]
         starting_bid = request.POST["new_listing_starting_bid"]
         category = request.POST["category"]
-        user = util.get_user(request)
         alert = "new_article"
         # submit new article
         new_article = Listing(author=user, title=title, description=description, image_url=image_url, 
@@ -135,15 +144,7 @@ def listing(request, title):
         context = {"article":article, "WatchlistOrNot":In_watchlist, "watchlist":watchlisted,
          "is_author":is_author, "comments":comments, "replies":replies}
         return render(request, "auctions/article.html", context)
-    except Listing.MultipleObjectsReturned:
-        # if multiple results matchs the title, render all possible listings
-        results = Listing.objects.filter(title=title)
-        listings = []
-        for result in results:
-            listings.append(result)
-        context = {"listings":listings, "query":title}
-        return render(request, "auctions/results.html", context)
-        # renders 404 page if no listing is found
+    # renders 404 page if no listing is found
     except Listing.DoesNotExist:
         return render(request, "auctions/not_found.html")
 
