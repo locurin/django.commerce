@@ -1,4 +1,4 @@
-# Django.Commerce - a simple auctions web app
+# Django.Commerce - a simple auctions web app project
 
 Django.Commerce's execution example available at http://djangocommerce.pythonanywhere.com/ 
 
