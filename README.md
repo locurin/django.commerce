@@ -1,6 +1,6 @@
 # Django.Commerce - a simple auctions web app project
 
-Django.Commerce's execution example available at http://djangocommerce.pythonanywhere.com/ 
+Django.Commerce's execution example available at http://djangocommerce.pythonanywhere.com/. Create an account to see the full scope of the app (please, refrain from using real personal data while signing up).
 
 ## Table of contents
 
