@@ -4,15 +4,15 @@ Django.Commerce's execution example available at http://djangocommerce.pythonany
 
 ## Table of contents
 
-*[General info](#general-info)
+* [General info](#general-info)
 
-*[implementation](#implementation)
+* [implementation](#implementation)
 
-*[Technologies](#technologies)
+* [Technologies](#technologies)
 
-*[functionalities](#functionalities)
+* [functionalities](#functionalities)
 
-*[version](#version)
+* [version](#version)
 
 *[credits](#credits)
 
@@ -28,20 +28,20 @@ This version presents a basic and simple user interface and currently is not res
 ## Implementation 
 Django.Commerce is an open source project, so everyone interesed can download all its features from Github [here](https://github.com/locurin/django.commerce). The same way, users are invited to improve its features or fully customize its look with HTML/CSS to fit their needs for implementation. 
 
-*To learn how to deploy your costume version of the app into the web visit [Django Docs regarding the issue](https://docs.djangoproject.com/en/3.1/howto/deployment/).
+* To learn how to deploy your costume version of the app into the web visit [Django Docs regarding the issue](https://docs.djangoproject.com/en/3.1/howto/deployment/).
 
 
 ## Technologies
 
-*[Bootstrap](https://getbootstrap.com/) v.5-0.0-beta2
+* [Bootstrap](https://getbootstrap.com/) v.5-0.0-beta2
 
-*[Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+* [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
 
-*[Django](https://www.djangoproject.com/) v.3.1.7
+* [Django](https://www.djangoproject.com/) v.3.1.7
 
-*[Python](https://www.python.org/) v.3.8.5
+* [Python](https://www.python.org/) v.3.8.5
 
-*[SQLite3](https://www.sqlite.org/) v.3.35.2
+* [SQLite3](https://www.sqlite.org/) v.3.35.2
 
 ## Scope of Functionalities
 
