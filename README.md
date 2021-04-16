@@ -14,7 +14,7 @@ Django.Commerce's execution example available at http://djangocommerce.pythonany
 
 * [version](#version)
 
-*[credits](#credits)
+* [credits](#credits)
 
 
 ## General info
